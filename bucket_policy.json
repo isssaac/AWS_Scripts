@@ -1,0 +1,20 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowAllS3ActionsInUserFolderForUserOnly",
+            "Effect": "Deny",
+            "Principal": "*",
+            "Action": "s3:*",
+            "Resource": [
+                "arn:aws:s3:::23019722-cloudstorage",
+                "arn:aws:s3:::23019722-cloudstorage/*"
+            ],
+            "Condition": {
+                "StringNotLike": {
+                    "aws:username": "23019722@student.uwa.edu.au"
+                }
+            }
+        }
+    ]
+}
